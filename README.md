@@ -14,7 +14,7 @@ So, this utility attempts to handle everything. It:
 - Will properly handle URLs with query parameters or a named anchor (i.e. hash)
 - Will autolink email addresses.
 - Will autolink phone numbers.
-- Will autolink mentions (Twitter, Instagram).
+- Will autolink mentions (Twitter, Instagram, Soundcloud, TikTok).
 - Will autolink hashtags.
 - Will properly handle HTML input. The utility will not change the `href`
   attribute inside anchor (&lt;a&gt;) tags (or any other tag/attribute), 
@@ -27,56 +27,62 @@ Full API Docs: [http://gregjacobs.github.io/Autolinker.js/api/](http://gregjacob
 Live Example: [http://gregjacobs.github.io/Autolinker.js/examples/live-example/](http://gregjacobs.github.io/Autolinker.js/examples/live-example/)
 
 
-## v1.0 released. Breaking Changes from 0.x -> 1.x
+## v3.0 released Jan 2019
 
-1. `twitter` option removed, replaced with `mention` (which accepts 'twitter' 
-   and 'instagram' values)
-2. Matching mentions (previously the `twitter` option) now defaults to
-   being turned off. Previously, Twitter handle matching was on by 
-   default.
-3. `replaceFn` option now called with just one argument: the `Match` 
-   object (previously was called with two arguments: `autolinker` and 
-   `match`)
-4. (Used inside the `replaceFn`) `TwitterMatch` replaced with 
-   `MentionMatch`, and `MentionMatch.getType()` now returns `'mention'` 
-   instead of `'twitter'`
-5. (Used inside the `replaceFn`) `TwitterMatch.getTwitterHandle()` -> 
-   `MentionMatch.getMention()`
+See [Upgrading from v2.x -> v3.x (Breaking Changes)](#upgrading-from-v2x---v3x-breaking-changes) at the bottom of this readme
 
 
 ## Installation
 
-#### Download
-
-Simply clone or download the zip of the project, and link to either
-`dist/Autolinker.js` or `dist/Autolinker.min.js` with a script tag:
-
-```html
-<script src="path/to/Autolinker.min.js"></script>
-```
-
-#### Using with the [Bower](http://bower.io) package manager:
-
-Command line:
-
-```shell
-bower install Autolinker.js --save
-```
-
-#### Using with [Node.js](http://nodejs.org) via [npm](https://www.npmjs.org/):
-
-Command Line:
+#### Installing with the [npm](https://www.npmjs.org/) package manager:
 
 ```shell
 npm install autolinker --save
 ```
 
-JavaScript:
+
+#### Installing with the [Yarn](https://yarnpkg.com/) package manager:
+
+```shell
+yarn add autolinker
+```
+
+
+#### Installing with the [Bower](http://bower.io) package manager:	
+  
+```shell
+bower install Autolinker.js --save
+```
+
+
+#### Direct download
+
+Simply clone this repository or download a zip of the project, and link to 
+either `dist/Autolinker.js` or `dist/Autolinker.min.js` with a script tag.
+
+
+## Importing Autolinker
+
+#### ES6/TypeScript/Webpack:
+
+```ts
+import Autolinker from 'autolinker';
+```
+
+#### Node.js:
 
 ```javascript
-var Autolinker = require( 'autolinker' );
+const Autolinker = require( 'autolinker' );
 // note: npm wants an all-lowercase package name, but the utility is a class and
 // should be aliased with a capital letter
+```
+
+#### Browser
+
+```html
+<!-- 'Autolinker.js' or 'Autolinker.min.js' - non-minified is better for 
+     debugging, minified is better for users' download time -->
+<script src="path/to/autolinker/dist/Autolinker.min.js"></script>
 ```
 
 
@@ -103,88 +109,98 @@ slightly more efficient to create a single Autolinker instance, and run the
 method repeatedly (i.e. use the "class" form above).
 
 
-#### Example:
+#### Examples:
 
 ```javascript
-var linkedText = Autolinker.link( "Check out google.com", { className: "myLink" } );
-// Produces: "Check out <a class="myLink myLink-url" href="http://google.com" target="_blank">google.com</a>"
+var linkedText = Autolinker.link( "Check out google.com" );
+// Produces: "Check out <a href="http://google.com" target="_blank" rel="noopener noreferrer">google.com</a>"
+
+var linkedText = Autolinker.link( "Check out google.com", { 
+    newWindow: false 
+} );
+// Produces: "Check out <a href="http://google.com">google.com</a>"
 ```
 
 ## Options
 
-These are the options which may be specified for linking. These are specified by
-providing an Object as the second parameter to [Autolinker.link()](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-static-method-link). These include:
+The following are the options which may be specified for linking. These are 
+specified by providing an Object as the second parameter to [Autolinker.link()](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-static-method-link). 
+These include:
 
-- [newWindow](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-newWindow) : Boolean<br />
+- [newWindow](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-newWindow) : boolean<br />
   `true` to have the links should open in a new window when clicked, `false`
-  otherwise. Defaults to `true`.<br /><br />
-- [urls](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-urls) : Boolean/Object<br />
-  `true` to have URLs auto-linked, `false` to skip auto-linking of URLs.
-  Defaults to `true`.<br>
+  otherwise. Defaults to `true`.
+  
+- [urls](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-urls) : boolean/Object<br />
+  `true` to have URLs auto-linked, `false` to skip auto-linking of URLs. Defaults 
+  to `true`.
 
   This option also accepts an Object form with 3 properties to allow for 
   more customization of what exactly gets linked. All default to `true`:
 
-    - schemeMatches (Boolean): `true` to match URLs found prefixed with a scheme,
+    - schemeMatches (boolean): `true` to match URLs found prefixed with a scheme,
       i.e. `http://google.com`, or `other+scheme://google.com`, `false` to
       prevent these types of matches.
-    - wwwMatches (Boolean): `true` to match urls found prefixed with `'www.'`,
+    - wwwMatches (boolean): `true` to match urls found prefixed with `'www.'`,
       i.e. `www.google.com`. `false` to prevent these types of matches. Note
       that if the URL had a prefixed scheme, and `schemeMatches` is true, it
       will still be linked.
     - tldMatches: `true` to match URLs with known top level domains (.com, .net,
       etc.) that are not prefixed with a scheme or `'www.'`. Ex: `google.com`,
       `asdf.org/?page=1`, etc. `false` to prevent these types of matches.
-      <br />
 
   Example usage: `urls: { schemeMatches: true, wwwMatches: true, tldMatches: false }`
 
-- [email](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-email) : Boolean<br />
+- [email](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-email) : boolean<br />
   `true` to have email addresses auto-linked, `false` to skip auto-linking of
-  email addresses. Defaults to `true`.<br /><br />
-- [phone](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-phone) : Boolean<br />
+  email addresses. Defaults to `true`.
+  
+- [phone](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-phone) : boolean<br />
   `true` to have phone numbers auto-linked, `false` to skip auto-linking of
-  phone numbers. Defaults to `true`.<br /><br />
-- [mention](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-mention) : String<br />
+  phone numbers. Defaults to `true`.
+
+- [mention](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-mention) : string<br />
   A string for the service name to have mentions (@username) auto-linked to. Supported
-  values at this time are 'twitter', and 'instagram'. Pass `false` to skip
-  auto-linking of mentions. Defaults to `false`.<br /><br />
-- [hashtag](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-hashtag) : Boolean/String<br />
+  values at this time are 'twitter', 'soundcloud', 'instagram' and 'tiktok'. Pass `false` to skip
+  auto-linking of mentions. Defaults to `false`.
+
+- [hashtag](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-hashtag) : boolean/string<br />
   A string for the service name to have hashtags auto-linked to. Supported
-  values at this time are 'twitter', 'facebook' and 'instagram'. Pass `false` to skip
-  auto-linking of hashtags. Defaults to `false`.<br /><br />
-- [stripPrefix](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-stripPrefix) : Boolean<br />
+  values at this time are 'twitter', 'facebook', 'instagram' and 'tiktok'. Pass `false` to skip
+  auto-linking of hashtags. Defaults to `false`.
+
+- [stripPrefix](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-stripPrefix) : boolean<br />
   `true` to have the `'http://'` (or `'https://'`) and/or the `'www.'` 
   stripped from the beginning of displayed links, `false` otherwise. 
-  Defaults to `true`.<br />
+  Defaults to `true`.
   
   This option also accepts an Object form with 2 properties to allow for 
   more customization of what exactly is prevented from being displayed. 
   Both default to `true`:
 
-    - scheme (Boolean): `true` to prevent the scheme part of a URL match
+    - scheme (boolean): `true` to prevent the scheme part of a URL match
       from being displayed to the user. Example: `'http://google.com'` 
       will be displayed as `'google.com'`. `false` to not strip the 
       scheme. NOTE: Only an `'http://'` or `'https://'` scheme will be
       removed, so as not to remove a potentially dangerous scheme (such
       as `'file://'` or `'javascript:'`).
-    - www (Boolean): `true` to prevent the `'www.'` part of a URL match
+    - www (boolean): `true` to prevent the `'www.'` part of a URL match
       from being displayed to the user. Ex: `'www.google.com'` will be
       displayed as `'google.com'`. `false` to not strip the `'www'`.
-  
-  <br /><br />
-- [stripTrailingSlash](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-stripTrailingSlash) : Boolean<br />
+
+- [stripTrailingSlash](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-stripTrailingSlash) : boolean<br />
   `true` to remove the trailing slash from URL matches, `false` to keep
   the trailing slash. Example when `true`: `http://google.com/` will be 
   displayed as `http://google.com`. Defaults to `true`.
-- [truncate](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-truncate) : Number/Object<br />
+
+- [truncate](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-truncate) : number/Object<br />
   A number for how many characters long URLs/emails/Twitter handles/Twitter
   hashtags should be truncated to inside the text of a link. If the match is
   over the number of characters, it will be truncated to this length by
-  replacing the end of the string with a two period ellipsis ('..').<br /><br />
+  replacing the end of the string with a two period ellipsis ('..').
 
   Example: a url like 'http://www.yahoo.com/some/long/path/to/a/file' truncated
-  to 25 characters may look like this: 'yahoo.com/some/long/pat..'<br /><br />
+  to 25 characters may look like this: 'yahoo.com/some/long/pat..'
 
   In the object form, both `length` and `location` may be specified to perform
   truncation. Available options for `location` are: 'end' (default), 'middle',
@@ -199,20 +215,22 @@ providing an Object as the second parameter to [Autolinker.link()](http://gregja
   hash, etc.) before trying to find a good point to insert the ellipsis if it is
   still too long. For details, see source code of:
   [TruncateSmart](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker.truncate.TruncateSmart)
-- [className](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-className) : String<br />
+  
+- [className](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-className) : string<br />
   A CSS class name to add to the generated anchor tags. This class will be added
   to all links, as well as this class plus "url"/"email"/"phone"/"hashtag"/"mention"/"twitter"/"instagram"
   suffixes for styling url/email/phone/hashtag/mention links differently.
 
   For example, if this config is provided as "myLink", then:
 
-  1) URL links will have the CSS classes: "myLink myLink-url"<br />
-  2) Email links will have the CSS classes: "myLink myLink-email"<br />
-  3) Phone links will have the CSS classes: "myLink myLink-phone"<br />
-  4) Twitter mention links will have the CSS classes: "myLink myLink-mention myLink-twitter"<br />
-  5) Instagram mention links will have the CSS classes: "myLink myLink-mention myLink-instagram"<br />
-  5) Hashtag links will have the CSS classes: "myLink myLink-hashtag"<br />
-- [decodePercentEncoding](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-decodePercentEncoding): Boolean<br />
+  - URL links will have the CSS classes: "myLink myLink-url"
+  - Email links will have the CSS classes: "myLink myLink-email"
+  - Phone links will have the CSS classes: "myLink myLink-phone"
+  - Twitter mention links will have the CSS classes: "myLink myLink-mention myLink-twitter"
+  - Instagram mention links will have the CSS classes: "myLink myLink-mention myLink-instagram"
+  - Hashtag links will have the CSS classes: "myLink myLink-hashtag"
+
+- [decodePercentEncoding](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-decodePercentEncoding): boolean<br />
   `true` to decode percent-encoded characters in URL matches, `false` to keep
   the percent-encoded characters.
   
@@ -220,27 +238,49 @@ providing an Object as the second parameter to [Autolinker.link()](http://gregja
   be displayed as `https://en.wikipedia.org/wiki/San_José`.
   
   Defaults to `true`.
+
 - [replaceFn](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-replaceFn) : Function<br />
   A function to use to programmatically make replacements of matches in the
   input string, one at a time. See the section
   <a href="#custom-replacement-function">Custom Replacement Function</a> for
   more details.
 
+- [sanitizeHtml](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-sanitizeHtml) : boolean<br />
+  
+	`true` to HTML-encode the start and end brackets of existing HTML tags found 
+  in the input string. This will escape `<` and `>` characters to `&lt;` and 
+  `&gt;`, respectively.
+	
+	Setting this to `true` will prevent XSS (Cross-site Scripting) attacks, 
+	but will remove the significance of existing HTML tags in the input string. If 
+  you would like to maintain the significance of existing HTML tags while also 
+  making the output HTML string safe, leave this option as `false` and use a 
+  tool like https://github.com/cure53/DOMPurify (or others) on the input string 
+  before running Autolinker.
+
+  Defaults to `false`.
+
 For example, if you wanted to disable links from opening in [new windows](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker-cfg-newWindow), you could do:
 
 ```javascript
-var linkedText = Autolinker.link( "Check out google.com", { newWindow: false } );
+var linkedText = Autolinker.link( "Check out google.com", { 
+    newWindow: false 
+} );
 // Produces: "Check out <a href="http://google.com">google.com</a>"
 ```
 
 And if you wanted to truncate the length of URLs (while also not opening in a new window), you could do:
 
 ```javascript
-var linkedText = Autolinker.link( "http://www.yahoo.com/some/long/path/to/a/file", { truncate: 25, newWindow: false } );
+var linkedText = Autolinker.link( "http://www.yahoo.com/some/long/path/to/a/file", { 
+    truncate: 25, 
+    newWindow: false 
+} );
 // Produces: "<a href="http://www.yahoo.com/some/long/path/to/a/file">yahoo.com/some/long/pat..</a>"
 ```
 
 ## More Examples
+
 One could update an entire DOM element that has unlinked text to auto-link them
 as such:
 
@@ -265,6 +305,25 @@ autolinker.link( "Check out http://www.yahoo.com/some/long/path/to/a/file" );
 autolinker.link( "Go to www.google.com" );
 // Produces: "Go to <a href="http://www.google.com">google.com</a>"
 
+```
+
+## Retrieving the List of Matches
+
+If you're just interested in retrieving the list of [Matches](http://greg-jacobs.com/Autolinker.js/api/#!/api/Autolinker.match.Match) without producing a transformed string, you can use the [parse()](http://greg-jacobs.com/Autolinker.js/api/#!/api/Autolinker-static-method-parse) method.
+
+For example:
+
+```
+var matches = Autolinker.parse( "Hello google.com, I am asdf@asdf.com", {
+    urls: true,
+    email: true
+} );
+
+console.log( matches.length );           // 2
+console.log( matches[ 0 ].getType() );   // 'url'
+console.log( matches[ 0 ].getUrl() );    // 'google.com'
+console.log( matches[ 1 ].getType() );   // 'email'
+console.log( matches[ 1 ].getEmail() );  // 'asdf@asdf.com'
 ```
 
 
@@ -301,9 +360,9 @@ var linkedText = Autolinker.link( input, {
                 }
 
             case 'phone' :
-                console.log( "Phone Number: ", match.getNumber() );
+                console.log( "Phone Number: ", match.getPhoneNumber() );
 
-                return '<a href="http://newplace.to.link.phone.numbers.to/">' + match.getNumber() + '</a>';
+                return '<a href="http://newplace.to.link.phone.numbers.to/">' + match.getPhoneNumber() + '</a>';
 
             case 'mention' :
                 console.log( "Mention: ", match.getMention() );
@@ -350,10 +409,10 @@ The `replaceFn` is provided one argument:
 A replacement of the match is made based on the return value of the function.
 The following return values may be provided:
 
-1. No return value (`undefined`), or `true` (Boolean): Delegate back to
+1. No return value (`undefined`), or `true` (boolean): Delegate back to
    Autolinker to replace the match as it normally would.
-2. `false` (Boolean): Do not replace the current match at all - leave as-is.
-3. Any String: If a string is returned from the function, the string will be used
+2. `false` (boolean): Do not replace the current match at all - leave as-is.
+3. Any string: If a string is returned from the function, the string will be used
    directly as the replacement HTML for the match.
 4. An [Autolinker.HtmlTag](http://gregjacobs.github.io/Autolinker.js/api/#!/api/Autolinker.HtmlTag)
    instance, which can be used to build/modify an HTML tag before writing out its
@@ -370,21 +429,209 @@ The full API docs for Autolinker may be referenced at:
 [http://gregjacobs.github.io/Autolinker.js/examples/live-example/](http://gregjacobs.github.io/Autolinker.js/examples/live-example/)
 
 
+## Users of Internet Explorer 8 and Below
 
-## Contributing
+Autolinker compiles into ES5, and uses ES5 library methods. If you need to run 
+Autolinker on old browsers (i.e. Internet Explorer 8 or below), you will need 
+some polyfills. 
 
-Pull requests definitely welcome.
+I recommend using the [core-js](https://www.npmjs.com/package/core-js)
+ES5 polyfill. You may also be able to get away with adding the following two
+polyfills, but that may or may not be true in the future:
 
-- Make sure to add tests to cover your new functionality/bugfix.
-- Run the `gulp test` command to build/test (or alternatively, open the 
-  `tests/index.html` file to run the tests).
-- When committing, please omit checking in the files in the `dist/` 
-  folder after building/testing. These are only committed to the 
-  repository for users downloading Autolinker via Bower. I will build 
-  these files and assign them a version number when merging your PR.
+```js
+if( typeof Array.prototype.forEach !== 'function' ) {
+    Array.prototype.forEach = function( callback, thisArg ) {
+        for( var i = 0; i < this.length; i++ ) {
+            callback.apply( thisArg || this, [ this[ i ], i, this ] );
+        }
+    };
+}
+
+if( typeof Object.assign !== 'function' ) {
+    Object.assign = function( target ) {
+        var srcObjs = Array.prototype.slice.call( arguments, 1 );
+
+        for( var i = 0, len = srcObjs.length; i < len; i++ ) {
+            var currentSrcObj = srcObjs[ i ];
+
+            for( var prop in currentSrcObj ) {
+                if( currentSrcObj.hasOwnProperty( prop ) ) {
+                    target[ prop ] = currentSrcObj[ prop ];
+                }
+            }
+        }
+        return target;
+    };
+}
+```
+
+## Upgrading from v2.x -> v3.x (Breaking Changes)
+
+1. If you are still on v1.x, first follow the instructions in the 
+   [Upgrading from v1.x -> v2.x](#upgrading-from-v1x---v2x-breaking-changes) 
+   section below.
+2. The `HtmlParser` class has been removed in favor of an internal `parseHtml()`
+   function which replaces the old regexp-based implementation with a state 
+   machine parser that is guaranteed to run in linear time. If you were using 
+   the `HtmlParser` class directly, I recommend switching to [htmlparser2](https://github.com/fb55/htmlparser2), which implements the HTML semantics 
+   better. The internal `parseHtml()` function that Autolinker now uses is 
+   fairly geared towards Autolinker's purposes, and may not be useful in a 
+   general HTML parsing sense.
+
+## Upgrading from v1.x -> v2.x (Breaking Changes)
+
+1. If you are still on v0.x, first follow the instructions in the 
+   [Upgrading from v0.x -> v1.x](#upgrading-from-v0x---v1x-breaking-changes) 
+   section below.
+2. The codebase has been converted to TypeScript, and uses ES6 exports. You can
+   now use the `import` statement to pull in the `Autolinker` class and related 
+   entities such as `Match`:
+
+   ```ts
+   // ES6/TypeScript/Webpack
+   import Autolinker, { Match } from 'autolinker';
+   ```
+
+   The `require()` interface is still supported as well for Node.js:
+
+   ```ts
+   // Node.js
+   const Autolinker = require( 'autolinker' );
+   ```
+
+3. You will no longer need the `@types/autolinker` package as this package now
+   exports its own types
+4. You will no longer be able to override the regular expressions in the 
+  `Matcher` classes by assigning to the prototype (for instance, something like
+   `PhoneMatcher.prototype.regex = ...`). This is due to how TypeScript creates 
+   properties for class instances in the constructor rather than on prototypes. 
+   
+   The idea of providing your own regular expression for these classes is a 
+   brittle notion anyway, as the  `Matcher` classes rely on capturing groups in 
+   the RegExp being in the right place, or even multiple capturing groups for 
+   the same piece of information to support a different format. These capturing
+   groups and associated code are subject to change as the regular expression 
+   needs to be updated, and will not involve a major version release of 
+   Autolinker.
+   
+   In the future you will be able to override the default `Matcher` classes
+   entirely to provide your own implementation, but please raise an issue (or
+   +1 an issue) if you think the library should support a currently-unsupported
+   format.
+
+## Upgrading from v0.x -> v1.x (Breaking Changes)
+
+1. `twitter` option removed, replaced with `mention` (which accepts 'twitter', 
+   'instagram' and 'soundcloud' values)
+2. Matching mentions (previously the `twitter` option) now defaults to
+   being turned off. Previously, Twitter handle matching was on by 
+   default.
+3. `replaceFn` option now called with just one argument: the `Match` 
+   object (previously was called with two arguments: `autolinker` and 
+   `match`)
+4. (Used inside the `replaceFn`) `TwitterMatch` replaced with 
+   `MentionMatch`, and `MentionMatch.getType()` now returns `'mention'` 
+   instead of `'twitter'`
+5. (Used inside the `replaceFn`) `TwitterMatch.getTwitterHandle()` -> 
+   `MentionMatch.getMention()`
+
+
+
+## Developing / Contributing
+
+Pull requests definitely welcome. To setup the project, make
+sure you have [Node.js](https://nodejs.org) installed. Then
+open up a command prompt and type the following:
+
+```
+npm install -g yarn  # if you don't have yarn already
+
+cd Autolinker.js     # where you cloned the project
+yarn install
+```
+
+To run the tests:
+
+```
+yarn test
+```
+
+- Make sure to add tests to cover your new functionality/bugfix
+- Run the `yarn test` command to build/test
 - Please use tabs for indents! Tabs are better for everybody 
   (individuals can set their editors to different tab sizes based on 
   their visual preferences).
+
+
+#### Building the Project Fully
+
+For this you will need [Ruby](https://www.ruby-lang.org) installed (note: Ruby
+comes pre-installed on MacOS), with the [JSDuck](https://github.com/senchalabs/jsduck) 
+gem. 
+
+See https://github.com/senchalabs/jsduck#getting-it for installation 
+instructions on Windows/Mac/Linux
+
+[JSDuck](https://github.com/senchalabs/jsduck) is used to build the project's
+API/documentation site. See [Documentation Generator Notes](#Documentation Generator Notes)
+for more info.
+
+
+#### Running the Live Example Page Locally
+
+Run:
+
+```
+yarn serve
+```
+
+Then open your browser to: http://localhost:8080/docs/examples/index.html
+
+You should be able to make a change to source files, and refresh the page to see
+the changes.
+
+Note: If anyone wants to submit a PR converting `gulp watch` to `webpack` with 
+the live development server, that would be much appreciated :)
+
+
+#### Documentation Generator Notes
+
+This project uses [JSDuck](https://github.com/senchalabs/jsduck) for its 
+documentation generation, which produces the page at [http://gregjacobs.github.io/Autolinker.js](http://gregjacobs.github.io/Autolinker.js).
+
+Unfortunately, JSDuck is a very old project that is no longer maintained. As 
+such, it doesn't support TypeScript or anything from ES6 (the `class` keyword, 
+arrow functions, etc). However, I have yet to find a better documentation 
+generator that creates such a useful API site. (Suggestions for a new one are 
+welcome though - please raise an issue.)
+
+Since ES6 is not supported, we must generate the documentation from the ES5 
+output. As such, a few precautions must be taken care of to make sure the 
+documentation comes out right:
+
+1. `@cfg` documentation tags must exist above a class property that has a 
+   default value, or else it won't end up in the ES5 output. For example:
+
+   ```ts
+   // Will correctly end up in the ES5 output
+
+   /**
+    * @cfg {String} title
+    */
+   readonly title: string = '';
+
+
+
+   // Will *not* end up in ES5 output, and thus, won't end up in the generated
+   // documentation
+
+   /**
+    * @cfg {String} title
+    */
+   readonly title: string;
+   ```
+2. The `@constructor` tag must be replaced with `@method constructor`
 
 
 ## Changelog
