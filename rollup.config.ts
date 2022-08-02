@@ -10,7 +10,7 @@ export default {
         file: './dist/autolinker.js',
         format: 'umd',
         name: 'Autolinker',
-        sourcemap: true,
+        sourcemap: false,
         banner: dedent`
             /*!
              * Autolinker.js

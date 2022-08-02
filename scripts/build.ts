@@ -15,24 +15,23 @@ const es2015OutputDir = './dist/es2015';
 fse.outputFileSync(
     `${pkgDir}/src/version.ts`,
     dedent`
-		// Important: this file is generated from the 'build' script and should not be
-		// edited directly
-		export const version = '${pkg.version}';
-	`,
+        // Important: this file is generated from the 'build' script and should not be
+        // edited directly
+        export const version = '${pkg.version}';
+    `,
     'utf-8'
 );
 
 // Build the output
 execSync(
-    `mkdirp dist/commonjs && tsc --module commonjs --outDir ${commonJsOutputDir} --noEmit false`
+    `mkdirp dist/commonjs && tsc --module commonjs -t ES2018 --outDir ${commonJsOutputDir} --noEmit false`
 );
-execSync(`mkdirp dist/es2015 && tsc --module es2015 --outDir ${es2015OutputDir} --noEmit false`);
 execSync(
-    `rollup --config rollup.config.ts && terser dist/autolinker.js --output dist/autolinker.min.js --compress --mangle --source-map "url='autolinker.min.js.map',includeSources=true"`
+    `mkdirp dist/es2015 && tsc --module es2015 -t ES2018 --outDir ${es2015OutputDir} --noEmit false`
 );
+execSync(`rollup --config rollup.config.ts`);
 
 fixCommonJsOutput();
-checkMinifiedFileSize();
 
 // End of script
 
@@ -108,26 +107,4 @@ function fixCommonJsOutput() {
     );
 
     fse.writeFileSync(`${commonJsOutputAbsDir}/index.js`, indexJsContents);
-}
-
-/**
- * Checks that we don't accidentally add an extra dependency that bloats the
- * minified size of Autolinker
- */
-async function checkMinifiedFileSize() {
-    const stats = fse.statSync(`${pkgDir}/dist/autolinker.min.js`);
-    const sizeInKb = stats.size / 1000;
-    const maxExpectedSizeInKb = 46.5;
-
-    if (sizeInKb > maxExpectedSizeInKb) {
-        throw new Error(dedent`
-			Minified file size of ${sizeInKb.toFixed(2)}kb is greater than max 
-			expected minified size of ${maxExpectedSizeInKb}kb
-			
-			This check is to make sure that a dependency is not accidentally 
-			added which significantly inflates the size of Autolinker. If 
-			additions to the codebase have been made though and a higher size 
-			is expected, bump the 'maxExpectedSizeInKb' number in ${__filename}
-		`);
-    }
 }
