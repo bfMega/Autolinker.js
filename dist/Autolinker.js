@@ -9,8 +9,8 @@
  */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-        typeof define === 'function' && define.amd ? define(factory) :
-            (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Autolinker = factory());
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Autolinker = factory());
 })(this, (function () { 'use strict';
 
     // Important: this file is generated from the 'build' script and should not be
@@ -1766,7 +1766,7 @@
 
     // NOTE: THIS IS A GENERATED FILE
     // To update with the latest TLD list, run `npm run update-tld-regex`
-    var tldRegex = /(?:xn--vermgensberatung-pwb|xn--vermgensberater-ctb|xn--clchc0ea0b2g2a9gcd|xn--w4r85el8fhu5dnra|northwesternmutual|travelersinsurance|verm\u00f6gensberatung|xn--5su34j936bgsg|xn--bck1b9a5dre4c|xn--mgbah1a3hjkrd|xn--mgbai9azgqp6j|xn--mgberp4a5d4ar|xn--xkc2dl3a5ee0h|verm\u00f6gensberater|xn--fzys8d69uvgm|xn--mgba7c0bbn0a|xn--mgbcpq6gpa1a|xn--xkc2al3hye2a|americanexpress|kerryproperties|sandvikcoromant|xn--i1b6b1a6a2e|xn--kcrx77d1x4a|xn--lgbbat1ad8j|xn--mgba3a4f16a|xn--mgbaakc7dvf|xn--mgbc0a9azcg|xn--nqv7fs00ema|americanfamily|bananarepublic|cancerresearch|cookingchannel|kerrylogistics|weatherchannel|xn--54b7fta0cc|xn--6qq986b3xl|xn--80aqecdr1a|xn--b4w605ferd|xn--fiq228c5hs|xn--h2breg3eve|xn--jlq480n2rg|xn--jlq61u9w7b|xn--mgba3a3ejt|xn--mgbaam7a8h|xn--mgbayh7gpa|xn--mgbbh1a71e|xn--mgbca7dzdo|xn--mgbi4ecexp|xn--mgbx4cd0ab|xn--rvc1e0am3e|international|lifeinsurance|travelchannel|wolterskluwer|xn--cckwcxetd|xn--eckvdtc9d|xn--fpcrj9c3d|xn--fzc2c9e2c|xn--h2brj9c8c|xn--tiq49xqyj|xn--yfro4i67o|xn--ygbi2ammx|construction|lplfinancial|scholarships|versicherung|xn--3e0b707e|xn--45br5cyl|xn--4dbrk0ce|xn--80adxhks|xn--80asehdb|xn--8y0a063a|xn--gckr3f0f|xn--mgb9awbf|xn--mgbab2bd|xn--mgbgu82a|xn--mgbpl2fh|xn--mgbt3dhd|xn--mk1bu44c|xn--ngbc5azd|xn--ngbe9e0a|xn--ogbpf8fl|xn--qcka1pmc|accountants|barclaycard|blackfriday|blockbuster|bridgestone|calvinklein|contractors|creditunion|engineering|enterprises|foodnetwork|investments|kerryhotels|lamborghini|motorcycles|olayangroup|photography|playstation|productions|progressive|redumbrella|williamhill|xn--11b4c3d|xn--1ck2e1b|xn--1qqw23a|xn--2scrj9c|xn--3bst00m|xn--3ds443g|xn--3hcrj9c|xn--42c2d9a|xn--45brj9c|xn--55qw42g|xn--6frz82g|xn--80ao21a|xn--9krt00a|xn--cck2b3b|xn--czr694b|xn--d1acj3b|xn--efvy88h|xn--fct429k|xn--fjq720a|xn--flw351e|xn--g2xx48c|xn--gecrj9c|xn--gk3at1e|xn--h2brj9c|xn--hxt814e|xn--imr513n|xn--j6w193g|xn--jvr189m|xn--kprw13d|xn--kpry57d|xn--mgbbh1a|xn--mgbtx2b|xn--mix891f|xn--nyqy26a|xn--otu796d|xn--pgbs0dh|xn--q9jyb4c|xn--rhqv96g|xn--rovu88b|xn--s9brj9c|xn--ses554g|xn--t60b56a|xn--vuq861b|xn--w4rs40l|xn--xhq521b|xn--zfr164b|\u0b9a\u0bbf\u0b99\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0bc2\u0bb0\u0bcd|accountant|apartments|associates|basketball|bnpparibas|boehringer|capitalone|consulting|creditcard|cuisinella|eurovision|extraspace|foundation|healthcare|immobilien|industries|management|mitsubishi|nextdirect|properties|protection|prudential|realestate|republican|restaurant|schaeffler|tatamotors|technology|university|vlaanderen|volkswagen|xn--30rr7y|xn--3pxu8k|xn--45q11c|xn--4gbrim|xn--55qx5d|xn--5tzm5g|xn--80aswg|xn--90a3ac|xn--9dbq2a|xn--9et52u|xn--c2br7g|xn--cg4bki|xn--czrs0t|xn--czru2d|xn--fiq64b|xn--fiqs8s|xn--fiqz9s|xn--io0a7i|xn--kput3i|xn--mxtq1m|xn--o3cw4h|xn--pssy2u|xn--q7ce6a|xn--unup4y|xn--wgbh1c|xn--wgbl6a|xn--y9a3aq|accenture|alfaromeo|allfinanz|amsterdam|analytics|aquarelle|barcelona|bloomberg|christmas|community|directory|education|equipment|fairwinds|financial|firestone|fresenius|frontdoor|furniture|goldpoint|hisamitsu|homedepot|homegoods|homesense|institute|insurance|kuokgroup|lancaster|landrover|lifestyle|marketing|marshalls|melbourne|microsoft|panasonic|passagens|pramerica|richardli|shangrila|solutions|statebank|statefarm|stockholm|travelers|vacations|xn--90ais|xn--c1avg|xn--d1alf|xn--e1a4c|xn--fhbei|xn--j1aef|xn--j1amh|xn--l1acc|xn--ngbrx|xn--nqv7f|xn--p1acf|xn--qxa6a|xn--tckwe|xn--vhquv|yodobashi|\u0645\u0648\u0631\u064a\u062a\u0627\u0646\u064a\u0627|abudhabi|airforce|allstate|attorney|barclays|barefoot|bargains|baseball|boutique|bradesco|broadway|brussels|builders|business|capetown|catering|catholic|cipriani|cityeats|cleaning|clinique|clothing|commbank|computer|delivery|deloitte|democrat|diamonds|discount|discover|download|engineer|ericsson|etisalat|exchange|feedback|fidelity|firmdale|football|frontier|goodyear|grainger|graphics|guardian|hdfcbank|helsinki|holdings|hospital|infiniti|ipiranga|istanbul|jpmorgan|lighting|lundbeck|marriott|maserati|mckinsey|memorial|merckmsd|mortgage|observer|partners|pharmacy|pictures|plumbing|property|redstone|reliance|saarland|samsclub|security|services|shopping|showtime|softbank|software|stcgroup|supplies|training|vanguard|ventures|verisign|woodside|xn--90ae|xn--node|xn--p1ai|xn--qxam|yokohama|\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629|abogado|academy|agakhan|alibaba|android|athleta|auction|audible|auspost|avianca|banamex|bauhaus|bentley|bestbuy|booking|brother|bugatti|capital|caravan|careers|channel|charity|chintai|citadel|clubmed|college|cologne|comcast|company|compare|contact|cooking|corsica|country|coupons|courses|cricket|cruises|dentist|digital|domains|exposed|express|farmers|fashion|ferrari|ferrero|finance|fishing|fitness|flights|florist|flowers|forsale|frogans|fujitsu|gallery|genting|godaddy|grocery|guitars|hamburg|hangout|hitachi|holiday|hosting|hoteles|hotmail|hyundai|ismaili|jewelry|juniper|kitchen|komatsu|lacaixa|lanxess|lasalle|latrobe|leclerc|limited|lincoln|markets|monster|netbank|netflix|network|neustar|okinawa|oldnavy|organic|origins|philips|pioneer|politie|realtor|recipes|rentals|reviews|rexroth|samsung|sandvik|schmidt|schwarz|science|shiksha|singles|staples|storage|support|surgery|systems|temasek|theater|theatre|tickets|tiffany|toshiba|trading|walmart|wanggou|watches|weather|website|wedding|whoswho|windows|winners|xfinity|yamaxun|youtube|zuerich|\u043a\u0430\u0442\u043e\u043b\u0438\u043a|\u0627\u062a\u0635\u0627\u0644\u0627\u062a|\u0627\u0644\u0628\u062d\u0631\u064a\u0646|\u0627\u0644\u062c\u0632\u0627\u0626\u0631|\u0627\u0644\u0639\u0644\u064a\u0627\u0646|\u067e\u0627\u06a9\u0633\u062a\u0627\u0646|\u0643\u0627\u062b\u0648\u0644\u064a\u0643|\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe|abarth|abbott|abbvie|africa|agency|airbus|airtel|alipay|alsace|alstom|amazon|anquan|aramco|author|bayern|beauty|berlin|bharti|bostik|boston|broker|camera|career|casino|center|chanel|chrome|church|circle|claims|clinic|coffee|comsec|condos|coupon|credit|cruise|dating|datsun|dealer|degree|dental|design|direct|doctor|dunlop|dupont|durban|emerck|energy|estate|events|expert|family|flickr|futbol|gallup|garden|george|giving|global|google|gratis|health|hermes|hiphop|hockey|hotels|hughes|imamat|insure|intuit|jaguar|joburg|juegos|kaufen|kinder|kindle|kosher|lancia|latino|lawyer|lefrak|living|locker|london|luxury|madrid|maison|makeup|market|mattel|mobile|monash|mormon|moscow|museum|mutual|nagoya|natura|nissan|nissay|norton|nowruz|office|olayan|online|oracle|orange|otsuka|pfizer|photos|physio|pictet|quebec|racing|realty|reisen|repair|report|review|rocher|rogers|ryukyu|safety|sakura|sanofi|school|schule|search|secure|select|shouji|soccer|social|stream|studio|supply|suzuki|swatch|sydney|taipei|taobao|target|tattoo|tennis|tienda|tjmaxx|tkmaxx|toyota|travel|unicom|viajes|viking|villas|virgin|vision|voting|voyage|vuelos|walter|webcam|xihuan|yachts|yandex|zappos|\u043c\u043e\u0441\u043a\u0432\u0430|\u043e\u043d\u043b\u0430\u0439\u043d|\u0627\u0628\u0648\u0638\u0628\u064a|\u0627\u0631\u0627\u0645\u0643\u0648|\u0627\u0644\u0627\u0631\u062f\u0646|\u0627\u0644\u0645\u063a\u0631\u0628|\u0627\u0645\u0627\u0631\u0627\u062a|\u0641\u0644\u0633\u0637\u064a\u0646|\u0645\u0644\u064a\u0633\u064a\u0627|\u092d\u093e\u0930\u0924\u092e\u094d|\u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8|\u30d5\u30a1\u30c3\u30b7\u30e7\u30f3|actor|adult|aetna|amfam|amica|apple|archi|audio|autos|azure|baidu|beats|bible|bingo|black|boats|bosch|build|canon|cards|chase|cheap|cisco|citic|click|cloud|coach|codes|crown|cymru|dabur|dance|deals|delta|drive|dubai|earth|edeka|email|epson|faith|fedex|final|forex|forum|gallo|games|gifts|gives|glass|globo|gmail|green|gripe|group|gucci|guide|homes|honda|horse|house|hyatt|ikano|irish|jetzt|koeln|kyoto|lamer|lease|legal|lexus|lilly|linde|lipsy|loans|locus|lotte|lotto|macys|mango|media|miami|money|movie|music|nexus|nikon|ninja|nokia|nowtv|omega|osaka|paris|parts|party|phone|photo|pizza|place|poker|praxi|press|prime|promo|quest|radio|rehab|reise|ricoh|rocks|rodeo|rugby|salon|sener|seven|sharp|shell|shoes|skype|sling|smart|smile|solar|space|sport|stada|store|study|style|sucks|swiss|tatar|tires|tirol|tmall|today|tokyo|tools|toray|total|tours|trade|trust|tunes|tushu|ubank|vegas|video|vodka|volvo|wales|watch|weber|weibo|works|world|xerox|yahoo|\u05d9\u05e9\u05e8\u05d0\u05dc|\u0627\u06cc\u0631\u0627\u0646|\u0628\u0627\u0632\u0627\u0631|\u0628\u06be\u0627\u0631\u062a|\u0633\u0648\u062f\u0627\u0646|\u0633\u0648\u0631\u064a\u0629|\u0647\u0645\u0631\u0627\u0647|\u092d\u093e\u0930\u094b\u0924|\u0938\u0902\u0917\u0920\u0928|\u09ac\u09be\u0982\u09b2\u09be|\u0c2d\u0c3e\u0c30\u0c24\u0c4d|\u0d2d\u0d3e\u0d30\u0d24\u0d02|\u5609\u91cc\u5927\u9152\u5e97|aarp|able|adac|aero|akdn|ally|amex|arab|army|arpa|arte|asda|asia|audi|auto|baby|band|bank|bbva|beer|best|bike|bing|blog|blue|bofa|bond|book|buzz|cafe|call|camp|care|cars|casa|case|cash|cbre|cern|chat|citi|city|club|cool|coop|cyou|data|date|dclk|deal|dell|desi|diet|dish|docs|dvag|erni|fage|fail|fans|farm|fast|fiat|fido|film|fire|fish|flir|food|ford|free|fund|game|gbiz|gent|ggee|gift|gmbh|gold|golf|goog|guge|guru|hair|haus|hdfc|help|here|hgtv|host|hsbc|icbc|ieee|imdb|immo|info|itau|java|jeep|jobs|jprs|kddi|kiwi|kpmg|kred|land|lego|lgbt|lidl|life|like|limo|link|live|loan|loft|love|ltda|luxe|maif|meet|meme|menu|mini|mint|mobi|moda|moto|name|navy|news|next|nico|nike|ollo|open|page|pars|pccw|pics|ping|pink|play|plus|pohl|porn|post|prod|prof|qpon|read|reit|rent|rest|rich|room|rsvp|ruhr|safe|sale|sarl|save|saxo|scot|seat|seek|sexy|shaw|shia|shop|show|silk|sina|site|skin|sncf|sohu|song|sony|spot|star|surf|talk|taxi|team|tech|teva|tiaa|tips|town|toys|tube|vana|visa|viva|vivo|vote|voto|wang|weir|wien|wiki|wine|work|xbox|yoga|zara|zero|zone|\u0434\u0435\u0442\u0438|\u0441\u0430\u0439\u0442|\u0628\u0627\u0631\u062a|\u0628\u064a\u062a\u0643|\u0680\u0627\u0631\u062a|\u062a\u0648\u0646\u0633|\u0634\u0628\u0643\u0629|\u0639\u0631\u0627\u0642|\u0639\u0645\u0627\u0646|\u0645\u0648\u0642\u0639|\u092d\u093e\u0930\u0924|\u09ad\u09be\u09b0\u09a4|\u09ad\u09be\u09f0\u09a4|\u0a2d\u0a3e\u0a30\u0a24|\u0aad\u0abe\u0ab0\u0aa4|\u0b2d\u0b3e\u0b30\u0b24|\u0cad\u0cbe\u0cb0\u0ca4|\u0dbd\u0d82\u0d9a\u0dcf|\u30a2\u30de\u30be\u30f3|\u30b0\u30fc\u30b0\u30eb|\u30af\u30e9\u30a6\u30c9|\u30dd\u30a4\u30f3\u30c8|\u7ec4\u7ec7\u673a\u6784|\u96fb\u8a0a\u76c8\u79d1|\u9999\u683c\u91cc\u62c9|aaa|abb|abc|aco|ads|aeg|afl|aig|anz|aol|app|art|aws|axa|bar|bbc|bbt|bcg|bcn|bet|bid|bio|biz|bms|bmw|bom|boo|bot|box|buy|bzh|cab|cal|cam|car|cat|cba|cbn|cbs|ceo|cfa|cfd|com|cpa|crs|dad|day|dds|dev|dhl|diy|dnp|dog|dot|dtv|dvr|eat|eco|edu|esq|eus|fan|fit|fly|foo|fox|frl|ftr|fun|fyi|gal|gap|gay|gdn|gea|gle|gmo|gmx|goo|gop|got|gov|hbo|hiv|hkt|hot|how|ibm|ice|icu|ifm|inc|ing|ink|int|ist|itv|jcb|jio|jll|jmp|jnj|jot|joy|kfh|kia|kim|kpn|krd|lat|law|lds|llc|llp|lol|lpl|ltd|man|map|mba|med|men|mil|mit|mlb|mls|mma|moe|moi|mom|mov|msd|mtn|mtr|nab|nba|nec|net|new|nfl|ngo|nhk|now|nra|nrw|ntt|nyc|obi|one|ong|onl|ooo|org|ott|ovh|pay|pet|phd|pid|pin|pnc|pro|pru|pub|pwc|red|ren|ril|rio|rip|run|rwe|sap|sas|sbi|sbs|sca|scb|ses|sew|sex|sfr|ski|sky|soy|spa|srl|stc|tab|tax|tci|tdk|tel|thd|tjx|top|trv|tui|tvs|ubs|uno|uol|ups|vet|vig|vin|vip|wed|win|wme|wow|wtc|wtf|xin|xxx|xyz|you|yun|zip|\u0431\u0435\u043b|\u043a\u043e\u043c|\u049b\u0430\u0437|\u043c\u043a\u0434|\u043c\u043e\u043d|\u043e\u0440\u0433|\u0440\u0443\u0441|\u0441\u0440\u0431|\u0443\u043a\u0440|\u0570\u0561\u0575|\u05e7\u05d5\u05dd|\u0639\u0631\u0628|\u0642\u0637\u0631|\u0643\u0648\u0645|\u0645\u0635\u0631|\u0915\u0949\u092e|\u0928\u0947\u091f|\u0e04\u0e2d\u0e21|\u0e44\u0e17\u0e22|\u0ea5\u0eb2\u0ea7|\u30b9\u30c8\u30a2|\u30bb\u30fc\u30eb|\u307f\u3093\u306a|\u4e2d\u6587\u7f51|\u4e9a\u9a6c\u900a|\u5929\u4e3b\u6559|\u6211\u7231\u4f60|\u65b0\u52a0\u5761|\u6de1\u9a6c\u9521|\u8bfa\u57fa\u4e9a|\u98de\u5229\u6d66|ac|ad|ae|af|ag|ai|al|am|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cw|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|za|zm|zw|\u03b5\u03bb|\u03b5\u03c5|\u0431\u0433|\u0435\u044e|\u0440\u0444|\u10d2\u10d4|\ub2f7\ub137|\ub2f7\ucef4|\uc0bc\uc131|\ud55c\uad6d|\u30b3\u30e0|\u4e16\u754c|\u4e2d\u4fe1|\u4e2d\u56fd|\u4e2d\u570b|\u4f01\u4e1a|\u4f5b\u5c71|\u4fe1\u606f|\u5065\u5eb7|\u516b\u5366|\u516c\u53f8|\u516c\u76ca|\u53f0\u6e7e|\u53f0\u7063|\u5546\u57ce|\u5546\u5e97|\u5546\u6807|\u5609\u91cc|\u5728\u7ebf|\u5927\u62ff|\u5a31\u4e50|\u5bb6\u96fb|\u5e7f\u4e1c|\u5fae\u535a|\u6148\u5584|\u624b\u673a|\u62db\u8058|\u653f\u52a1|\u653f\u5e9c|\u65b0\u95fb|\u65f6\u5c1a|\u66f8\u7c4d|\u673a\u6784|\u6e38\u620f|\u6fb3\u9580|\u70b9\u770b|\u79fb\u52a8|\u7f51\u5740|\u7f51\u5e97|\u7f51\u7ad9|\u7f51\u7edc|\u8054\u901a|\u8c37\u6b4c|\u8d2d\u7269|\u901a\u8ca9|\u96c6\u56e2|\u98df\u54c1|\u9910\u5385|\u9999\u6e2f)/;
+    const tldRegex = /(?:xn--vermgensberatung-pwb|xn--vermgensberater-ctb|xn--clchc0ea0b2g2a9gcd|xn--w4r85el8fhu5dnra|northwesternmutual|travelersinsurance|vermögensberatung|xn--5su34j936bgsg|xn--bck1b9a5dre4c|xn--mgbah1a3hjkrd|xn--mgbai9azgqp6j|xn--mgberp4a5d4ar|xn--xkc2dl3a5ee0h|vermögensberater|xn--fzys8d69uvgm|xn--mgba7c0bbn0a|xn--mgbcpq6gpa1a|xn--xkc2al3hye2a|americanexpress|kerryproperties|sandvikcoromant|xn--i1b6b1a6a2e|xn--kcrx77d1x4a|xn--lgbbat1ad8j|xn--mgba3a4f16a|xn--mgbaakc7dvf|xn--mgbc0a9azcg|xn--nqv7fs00ema|americanfamily|bananarepublic|cancerresearch|cookingchannel|kerrylogistics|weatherchannel|xn--54b7fta0cc|xn--6qq986b3xl|xn--80aqecdr1a|xn--b4w605ferd|xn--fiq228c5hs|xn--h2breg3eve|xn--jlq480n2rg|xn--jlq61u9w7b|xn--mgba3a3ejt|xn--mgbaam7a8h|xn--mgbayh7gpa|xn--mgbbh1a71e|xn--mgbca7dzdo|xn--mgbi4ecexp|xn--mgbx4cd0ab|xn--rvc1e0am3e|international|lifeinsurance|travelchannel|wolterskluwer|xn--cckwcxetd|xn--eckvdtc9d|xn--fpcrj9c3d|xn--fzc2c9e2c|xn--h2brj9c8c|xn--tiq49xqyj|xn--yfro4i67o|xn--ygbi2ammx|construction|lplfinancial|scholarships|versicherung|xn--3e0b707e|xn--45br5cyl|xn--4dbrk0ce|xn--80adxhks|xn--80asehdb|xn--8y0a063a|xn--gckr3f0f|xn--mgb9awbf|xn--mgbab2bd|xn--mgbgu82a|xn--mgbpl2fh|xn--mgbt3dhd|xn--mk1bu44c|xn--ngbc5azd|xn--ngbe9e0a|xn--ogbpf8fl|xn--qcka1pmc|accountants|barclaycard|blackfriday|blockbuster|bridgestone|calvinklein|contractors|creditunion|engineering|enterprises|foodnetwork|investments|kerryhotels|lamborghini|motorcycles|olayangroup|photography|playstation|productions|progressive|redumbrella|williamhill|xn--11b4c3d|xn--1ck2e1b|xn--1qqw23a|xn--2scrj9c|xn--3bst00m|xn--3ds443g|xn--3hcrj9c|xn--42c2d9a|xn--45brj9c|xn--55qw42g|xn--6frz82g|xn--80ao21a|xn--9krt00a|xn--cck2b3b|xn--czr694b|xn--d1acj3b|xn--efvy88h|xn--fct429k|xn--fjq720a|xn--flw351e|xn--g2xx48c|xn--gecrj9c|xn--gk3at1e|xn--h2brj9c|xn--hxt814e|xn--imr513n|xn--j6w193g|xn--jvr189m|xn--kprw13d|xn--kpry57d|xn--mgbbh1a|xn--mgbtx2b|xn--mix891f|xn--nyqy26a|xn--otu796d|xn--pgbs0dh|xn--q9jyb4c|xn--rhqv96g|xn--rovu88b|xn--s9brj9c|xn--ses554g|xn--t60b56a|xn--vuq861b|xn--w4rs40l|xn--xhq521b|xn--zfr164b|\u0b9a\u0bbf\u0b99\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0bc2\u0bb0\u0bcd|accountant|apartments|associates|basketball|bnpparibas|boehringer|capitalone|consulting|creditcard|cuisinella|eurovision|extraspace|foundation|healthcare|immobilien|industries|management|mitsubishi|nextdirect|properties|protection|prudential|realestate|republican|restaurant|schaeffler|tatamotors|technology|university|vlaanderen|volkswagen|xn--30rr7y|xn--3pxu8k|xn--45q11c|xn--4gbrim|xn--55qx5d|xn--5tzm5g|xn--80aswg|xn--90a3ac|xn--9dbq2a|xn--9et52u|xn--c2br7g|xn--cg4bki|xn--czrs0t|xn--czru2d|xn--fiq64b|xn--fiqs8s|xn--fiqz9s|xn--io0a7i|xn--kput3i|xn--mxtq1m|xn--o3cw4h|xn--pssy2u|xn--q7ce6a|xn--unup4y|xn--wgbh1c|xn--wgbl6a|xn--y9a3aq|accenture|alfaromeo|allfinanz|amsterdam|analytics|aquarelle|barcelona|bloomberg|christmas|community|directory|education|equipment|fairwinds|financial|firestone|fresenius|frontdoor|furniture|goldpoint|hisamitsu|homedepot|homegoods|homesense|institute|insurance|kuokgroup|lancaster|landrover|lifestyle|marketing|marshalls|melbourne|microsoft|panasonic|passagens|pramerica|richardli|shangrila|solutions|statebank|statefarm|stockholm|travelers|vacations|xn--90ais|xn--c1avg|xn--d1alf|xn--e1a4c|xn--fhbei|xn--j1aef|xn--j1amh|xn--l1acc|xn--ngbrx|xn--nqv7f|xn--p1acf|xn--qxa6a|xn--tckwe|xn--vhquv|yodobashi|\u0645\u0648\u0631\u064a\u062a\u0627\u0646\u064a\u0627|abudhabi|airforce|allstate|attorney|barclays|barefoot|bargains|baseball|boutique|bradesco|broadway|brussels|builders|business|capetown|catering|catholic|cipriani|cityeats|cleaning|clinique|clothing|commbank|computer|delivery|deloitte|democrat|diamonds|discount|discover|download|engineer|ericsson|etisalat|exchange|feedback|fidelity|firmdale|football|frontier|goodyear|grainger|graphics|guardian|hdfcbank|helsinki|holdings|hospital|infiniti|ipiranga|istanbul|jpmorgan|lighting|lundbeck|marriott|maserati|mckinsey|memorial|merckmsd|mortgage|observer|partners|pharmacy|pictures|plumbing|property|redstone|reliance|saarland|samsclub|security|services|shopping|showtime|softbank|software|stcgroup|supplies|training|vanguard|ventures|verisign|woodside|xn--90ae|xn--node|xn--p1ai|xn--qxam|yokohama|\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629|abogado|academy|agakhan|alibaba|android|athleta|auction|audible|auspost|avianca|banamex|bauhaus|bentley|bestbuy|booking|brother|bugatti|capital|caravan|careers|channel|charity|chintai|citadel|clubmed|college|cologne|comcast|company|compare|contact|cooking|corsica|country|coupons|courses|cricket|cruises|dentist|digital|domains|exposed|express|farmers|fashion|ferrari|ferrero|finance|fishing|fitness|flights|florist|flowers|forsale|frogans|fujitsu|gallery|genting|godaddy|grocery|guitars|hamburg|hangout|hitachi|holiday|hosting|hoteles|hotmail|hyundai|ismaili|jewelry|juniper|kitchen|komatsu|lacaixa|lanxess|lasalle|latrobe|leclerc|limited|lincoln|markets|monster|netbank|netflix|network|neustar|okinawa|oldnavy|organic|origins|philips|pioneer|politie|realtor|recipes|rentals|reviews|rexroth|samsung|sandvik|schmidt|schwarz|science|shiksha|singles|staples|storage|support|surgery|systems|temasek|theater|theatre|tickets|tiffany|toshiba|trading|walmart|wanggou|watches|weather|website|wedding|whoswho|windows|winners|xfinity|yamaxun|youtube|zuerich|\u043a\u0430\u0442\u043e\u043b\u0438\u043a|\u0627\u062a\u0635\u0627\u0644\u0627\u062a|\u0627\u0644\u0628\u062d\u0631\u064a\u0646|\u0627\u0644\u062c\u0632\u0627\u0626\u0631|\u0627\u0644\u0639\u0644\u064a\u0627\u0646|\u067e\u0627\u06a9\u0633\u062a\u0627\u0646|\u0643\u0627\u062b\u0648\u0644\u064a\u0643|\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe|abarth|abbott|abbvie|africa|agency|airbus|airtel|alipay|alsace|alstom|amazon|anquan|aramco|author|bayern|beauty|berlin|bharti|bostik|boston|broker|camera|career|casino|center|chanel|chrome|church|circle|claims|clinic|coffee|comsec|condos|coupon|credit|cruise|dating|datsun|dealer|degree|dental|design|direct|doctor|dunlop|dupont|durban|emerck|energy|estate|events|expert|family|flickr|futbol|gallup|garden|george|giving|global|google|gratis|health|hermes|hiphop|hockey|hotels|hughes|imamat|insure|intuit|jaguar|joburg|juegos|kaufen|kinder|kindle|kosher|lancia|latino|lawyer|lefrak|living|locker|london|luxury|madrid|maison|makeup|market|mattel|mobile|monash|mormon|moscow|museum|mutual|nagoya|natura|nissan|nissay|norton|nowruz|office|olayan|online|oracle|orange|otsuka|pfizer|photos|physio|pictet|quebec|racing|realty|reisen|repair|report|review|rocher|rogers|ryukyu|safety|sakura|sanofi|school|schule|search|secure|select|shouji|soccer|social|stream|studio|supply|suzuki|swatch|sydney|taipei|taobao|target|tattoo|tennis|tienda|tjmaxx|tkmaxx|toyota|travel|unicom|viajes|viking|villas|virgin|vision|voting|voyage|vuelos|walter|webcam|xihuan|yachts|yandex|zappos|\u043c\u043e\u0441\u043a\u0432\u0430|\u043e\u043d\u043b\u0430\u0439\u043d|\u0627\u0628\u0648\u0638\u0628\u064a|\u0627\u0631\u0627\u0645\u0643\u0648|\u0627\u0644\u0627\u0631\u062f\u0646|\u0627\u0644\u0645\u063a\u0631\u0628|\u0627\u0645\u0627\u0631\u0627\u062a|\u0641\u0644\u0633\u0637\u064a\u0646|\u0645\u0644\u064a\u0633\u064a\u0627|\u092d\u093e\u0930\u0924\u092e\u094d|\u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8|\u30d5\u30a1\u30c3\u30b7\u30e7\u30f3|actor|adult|aetna|amfam|amica|apple|archi|audio|autos|azure|baidu|beats|bible|bingo|black|boats|bosch|build|canon|cards|chase|cheap|cisco|citic|click|cloud|coach|codes|crown|cymru|dabur|dance|deals|delta|drive|dubai|earth|edeka|email|epson|faith|fedex|final|forex|forum|gallo|games|gifts|gives|glass|globo|gmail|green|gripe|group|gucci|guide|homes|honda|horse|house|hyatt|ikano|irish|jetzt|koeln|kyoto|lamer|lease|legal|lexus|lilly|linde|lipsy|loans|locus|lotte|lotto|macys|mango|media|miami|money|movie|music|nexus|nikon|ninja|nokia|nowtv|omega|osaka|paris|parts|party|phone|photo|pizza|place|poker|praxi|press|prime|promo|quest|radio|rehab|reise|ricoh|rocks|rodeo|rugby|salon|sener|seven|sharp|shell|shoes|skype|sling|smart|smile|solar|space|sport|stada|store|study|style|sucks|swiss|tatar|tires|tirol|tmall|today|tokyo|tools|toray|total|tours|trade|trust|tunes|tushu|ubank|vegas|video|vodka|volvo|wales|watch|weber|weibo|works|world|xerox|yahoo|\u05d9\u05e9\u05e8\u05d0\u05dc|\u0627\u06cc\u0631\u0627\u0646|\u0628\u0627\u0632\u0627\u0631|\u0628\u06be\u0627\u0631\u062a|\u0633\u0648\u062f\u0627\u0646|\u0633\u0648\u0631\u064a\u0629|\u0647\u0645\u0631\u0627\u0647|\u092d\u093e\u0930\u094b\u0924|\u0938\u0902\u0917\u0920\u0928|\u09ac\u09be\u0982\u09b2\u09be|\u0c2d\u0c3e\u0c30\u0c24\u0c4d|\u0d2d\u0d3e\u0d30\u0d24\u0d02|\u5609\u91cc\u5927\u9152\u5e97|aarp|able|adac|aero|akdn|ally|amex|arab|army|arpa|arte|asda|asia|audi|auto|baby|band|bank|bbva|beer|best|bike|bing|blog|blue|bofa|bond|book|buzz|cafe|call|camp|care|cars|casa|case|cash|cbre|cern|chat|citi|city|club|cool|coop|cyou|data|date|dclk|deal|dell|desi|diet|dish|docs|dvag|erni|fage|fail|fans|farm|fast|fiat|fido|film|fire|fish|flir|food|ford|free|fund|game|gbiz|gent|ggee|gift|gmbh|gold|golf|goog|guge|guru|hair|haus|hdfc|help|here|hgtv|host|hsbc|icbc|ieee|imdb|immo|info|itau|java|jeep|jobs|jprs|kddi|kids|kiwi|kpmg|kred|land|lego|lgbt|lidl|life|like|limo|link|live|loan|loft|love|ltda|luxe|maif|meet|meme|menu|mini|mint|mobi|moda|moto|name|navy|news|next|nico|nike|ollo|open|page|pars|pccw|pics|ping|pink|play|plus|pohl|porn|post|prod|prof|qpon|read|reit|rent|rest|rich|room|rsvp|ruhr|safe|sale|sarl|save|saxo|scot|seat|seek|sexy|shaw|shia|shop|show|silk|sina|site|skin|sncf|sohu|song|sony|spot|star|surf|talk|taxi|team|tech|teva|tiaa|tips|town|toys|tube|vana|visa|viva|vivo|vote|voto|wang|weir|wien|wiki|wine|work|xbox|yoga|zara|zero|zone|\u0434\u0435\u0442\u0438|\u0441\u0430\u0439\u0442|\u0628\u0627\u0631\u062a|\u0628\u064a\u062a\u0643|\u0680\u0627\u0631\u062a|\u062a\u0648\u0646\u0633|\u0634\u0628\u0643\u0629|\u0639\u0631\u0627\u0642|\u0639\u0645\u0627\u0646|\u0645\u0648\u0642\u0639|\u092d\u093e\u0930\u0924|\u09ad\u09be\u09b0\u09a4|\u09ad\u09be\u09f0\u09a4|\u0a2d\u0a3e\u0a30\u0a24|\u0aad\u0abe\u0ab0\u0aa4|\u0b2d\u0b3e\u0b30\u0b24|\u0cad\u0cbe\u0cb0\u0ca4|\u0dbd\u0d82\u0d9a\u0dcf|\u30a2\u30de\u30be\u30f3|\u30b0\u30fc\u30b0\u30eb|\u30af\u30e9\u30a6\u30c9|\u30dd\u30a4\u30f3\u30c8|\u7ec4\u7ec7\u673a\u6784|\u96fb\u8a0a\u76c8\u79d1|\u9999\u683c\u91cc\u62c9|aaa|abb|abc|aco|ads|aeg|afl|aig|anz|aol|app|art|aws|axa|bar|bbc|bbt|bcg|bcn|bet|bid|bio|biz|bms|bmw|bom|boo|bot|box|buy|bzh|cab|cal|cam|car|cat|cba|cbn|cbs|ceo|cfa|cfd|com|cpa|crs|dad|day|dds|dev|dhl|diy|dnp|dog|dot|dtv|dvr|eat|eco|edu|esq|eus|fan|fit|fly|foo|fox|frl|ftr|fun|fyi|gal|gap|gay|gdn|gea|gle|gmo|gmx|goo|gop|got|gov|hbo|hiv|hkt|hot|how|ibm|ice|icu|ifm|inc|ing|ink|int|ist|itv|jcb|jio|jll|jmp|jnj|jot|joy|kfh|kia|kim|kpn|krd|lat|law|lds|llc|llp|lol|lpl|ltd|man|map|mba|med|men|mil|mit|mlb|mls|mma|moe|moi|mom|mov|msd|mtn|mtr|nab|nba|nec|net|new|nfl|ngo|nhk|now|nra|nrw|ntt|nyc|obi|one|ong|onl|ooo|org|ott|ovh|pay|pet|phd|pid|pin|pnc|pro|pru|pub|pwc|red|ren|ril|rio|rip|run|rwe|sap|sas|sbi|sbs|sca|scb|ses|sew|sex|sfr|ski|sky|soy|spa|srl|stc|tab|tax|tci|tdk|tel|thd|tjx|top|trv|tui|tvs|ubs|uno|uol|ups|vet|vig|vin|vip|wed|win|wme|wow|wtc|wtf|xin|xxx|xyz|you|yun|zip|\u0431\u0435\u043b|\u043a\u043e\u043c|\u049b\u0430\u0437|\u043c\u043a\u0434|\u043c\u043e\u043d|\u043e\u0440\u0433|\u0440\u0443\u0441|\u0441\u0440\u0431|\u0443\u043a\u0440|\u0570\u0561\u0575|\u05e7\u05d5\u05dd|\u0639\u0631\u0628|\u0642\u0637\u0631|\u0643\u0648\u0645|\u0645\u0635\u0631|\u0915\u0949\u092e|\u0928\u0947\u091f|\u0e04\u0e2d\u0e21|\u0e44\u0e17\u0e22|\u0ea5\u0eb2\u0ea7|\u30b9\u30c8\u30a2|\u30bb\u30fc\u30eb|\u307f\u3093\u306a|\u4e2d\u6587\u7f51|\u4e9a\u9a6c\u900a|\u5929\u4e3b\u6559|\u6211\u7231\u4f60|\u65b0\u52a0\u5761|\u6de1\u9a6c\u9521|\u8bfa\u57fa\u4e9a|\u98de\u5229\u6d66|ac|ad|ae|af|ag|ai|al|am|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cw|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|za|zm|zw|\u03b5\u03bb|\u03b5\u03c5|\u0431\u0433|\u0435\u044e|\u0440\u0444|\u10d2\u10d4|\ub2f7\ub137|\ub2f7\ucef4|\uc0bc\uc131|\ud55c\uad6d|\u30b3\u30e0|\u4e16\u754c|\u4e2d\u4fe1|\u4e2d\u56fd|\u4e2d\u570b|\u4f01\u4e1a|\u4f5b\u5c71|\u4fe1\u606f|\u5065\u5eb7|\u516b\u5366|\u516c\u53f8|\u516c\u76ca|\u53f0\u6e7e|\u53f0\u7063|\u5546\u57ce|\u5546\u5e97|\u5546\u6807|\u5609\u91cc|\u5728\u7ebf|\u5927\u62ff|\u5a31\u4e50|\u5bb6\u96fb|\u5e7f\u4e1c|\u5fae\u535a|\u6148\u5584|\u624b\u673a|\u62db\u8058|\u653f\u52a1|\u653f\u5e9c|\u65b0\u95fb|\u65f6\u5c1a|\u66f8\u7c4d|\u673a\u6784|\u6e38\u620f|\u6fb3\u9580|\u70b9\u770b|\u79fb\u52a8|\u7f51\u5740|\u7f51\u5e97|\u7f51\u7ad9|\u7f51\u7edc|\u8054\u901a|\u8c37\u6b4c|\u8d2d\u7269|\u901a\u8ca9|\u96c6\u56e2|\u98df\u54c1|\u9910\u5385|\u9999\u6e2f)/;
 
     // For debugging: search for other "For debugging" lines
     // import CliTable from 'cli-table';
@@ -1813,7 +1813,7 @@
                 t: 'o',
                 o: ':',
             };
-            let charIdx = 0, state = 0 /* NonEmailMatch */, currentEmailMatch = noCurrentEmailMatch;
+            let charIdx = 0, state = 0 /* State.NonEmailMatch */, currentEmailMatch = noCurrentEmailMatch;
             // For debugging: search for other "For debugging" lines
             // const table = new CliTable( {
             // 	head: [ 'charIdx', 'char', 'state', 'charIdx', 'currentEmailAddress.idx', 'hasDomainDot' ]
@@ -1825,28 +1825,28 @@
                 // 	[ charIdx, char, State[ state ], charIdx, currentEmailAddress.idx, currentEmailAddress.hasDomainDot ]
                 // );
                 switch (state) {
-                    case 0 /* NonEmailMatch */:
+                    case 0 /* State.NonEmailMatch */:
                         stateNonEmailAddress(char);
                         break;
-                    case 1 /* Mailto */:
+                    case 1 /* State.Mailto */:
                         stateMailTo(text.charAt(charIdx - 1), char);
                         break;
-                    case 2 /* LocalPart */:
+                    case 2 /* State.LocalPart */:
                         stateLocalPart(char);
                         break;
-                    case 3 /* LocalPartDot */:
+                    case 3 /* State.LocalPartDot */:
                         stateLocalPartDot(char);
                         break;
-                    case 4 /* AtSign */:
+                    case 4 /* State.AtSign */:
                         stateAtSign(char);
                         break;
-                    case 5 /* DomainChar */:
+                    case 5 /* State.DomainChar */:
                         stateDomainChar(char);
                         break;
-                    case 6 /* DomainHyphen */:
+                    case 6 /* State.DomainHyphen */:
                         stateDomainHyphen(char);
                         break;
-                    case 7 /* DomainDot */:
+                    case 7 /* State.DomainDot */:
                         stateDomainDot(char);
                         break;
                     default:
@@ -1866,7 +1866,7 @@
             // Handles the state when we're not in an email address
             function stateNonEmailAddress(char) {
                 if (char === 'm') {
-                    beginEmailMatch(1 /* Mailto */);
+                    beginEmailMatch(1 /* State.Mailto */);
                 }
                 else if (localPartCharRegex.test(char)) {
                     beginEmailMatch();
@@ -1878,7 +1878,7 @@
                 if (prevChar === ':') {
                     // We've reached the end of the 'mailto:' prefix
                     if (localPartCharRegex.test(char)) {
-                        state = 2 /* LocalPart */;
+                        state = 2 /* State.LocalPart */;
                         currentEmailMatch = new CurrentEmailMatch({
                             ...currentEmailMatch,
                             hasMailtoPrefix: true,
@@ -1895,17 +1895,17 @@
                 else if (localPartCharRegex.test(char)) {
                     // We we're reading a prefix of 'mailto:', but encountered a
                     // different character that didn't continue the prefix
-                    state = 2 /* LocalPart */;
+                    state = 2 /* State.LocalPart */;
                 }
                 else if (char === '.') {
                     // We we're reading a prefix of 'mailto:', but encountered a
                     // dot character
-                    state = 3 /* LocalPartDot */;
+                    state = 3 /* State.LocalPartDot */;
                 }
                 else if (char === '@') {
                     // We we're reading a prefix of 'mailto:', but encountered a
                     // an @ character
-                    state = 4 /* AtSign */;
+                    state = 4 /* State.AtSign */;
                 }
                 else {
                     // not an email address character, return to "NonEmailAddress" state
@@ -1916,10 +1916,10 @@
             // email address (as opposed to the "domain part")
             function stateLocalPart(char) {
                 if (char === '.') {
-                    state = 3 /* LocalPartDot */;
+                    state = 3 /* State.LocalPartDot */;
                 }
                 else if (char === '@') {
-                    state = 4 /* AtSign */;
+                    state = 4 /* State.AtSign */;
                 }
                 else if (localPartCharRegex.test(char)) ;
                 else {
@@ -1940,7 +1940,7 @@
                     resetToNonEmailMatchState();
                 }
                 else if (localPartCharRegex.test(char)) {
-                    state = 2 /* LocalPart */;
+                    state = 2 /* State.LocalPart */;
                 }
                 else {
                     // Anything else, not an email address
@@ -1949,7 +1949,7 @@
             }
             function stateAtSign(char) {
                 if (domainNameCharRegex.test(char)) {
-                    state = 5 /* DomainChar */;
+                    state = 5 /* State.DomainChar */;
                 }
                 else {
                     // Anything else, not an email address
@@ -1958,10 +1958,10 @@
             }
             function stateDomainChar(char) {
                 if (char === '.') {
-                    state = 7 /* DomainDot */;
+                    state = 7 /* State.DomainDot */;
                 }
                 else if (char === '-') {
-                    state = 6 /* DomainHyphen */;
+                    state = 6 /* State.DomainHyphen */;
                 }
                 else if (domainNameCharRegex.test(char)) ;
                 else {
@@ -1976,7 +1976,7 @@
                     captureMatchIfValidAndReset();
                 }
                 else if (domainNameCharRegex.test(char)) {
-                    state = 5 /* DomainChar */;
+                    state = 5 /* State.DomainChar */;
                 }
                 else {
                     // Anything else
@@ -1989,7 +1989,7 @@
                     captureMatchIfValidAndReset();
                 }
                 else if (domainNameCharRegex.test(char)) {
-                    state = 5 /* DomainChar */;
+                    state = 5 /* State.DomainChar */;
                     // After having read a '.' and then a valid domain character,
                     // we now know that the domain part of the email is valid, and
                     // we have found at least a partial EmailMatch (however, the
@@ -2004,12 +2004,12 @@
                     captureMatchIfValidAndReset();
                 }
             }
-            function beginEmailMatch(newState = 2 /* LocalPart */) {
+            function beginEmailMatch(newState = 2 /* State.LocalPart */) {
                 state = newState;
                 currentEmailMatch = new CurrentEmailMatch({ idx: charIdx });
             }
             function resetToNonEmailMatchState() {
-                state = 0 /* NonEmailMatch */;
+                state = 0 /* State.NonEmailMatch */;
                 currentEmailMatch = noCurrentEmailMatch;
             }
             /*
@@ -2356,7 +2356,7 @@
         parseMatches(text) {
             let matcherRegex = this.matcherRegex, stripPrefix = this.stripPrefix, stripTrailingSlash = this.stripTrailingSlash, decodePercentEncoding = this.decodePercentEncoding, tagBuilder = this.tagBuilder, matches = [], match;
             while ((match = matcherRegex.exec(text)) !== null) {
-                let matchStr = match[0], schemeUrlMatch = match[1], wwwUrlMatch = match[4], wwwProtocolRelativeMatch = match[5],
+                let matchStr = match[0], schemeUrlMatch = match[1], wwwUrlMatch = match[4], wwwProtocolRelativeMatch = match[5], 
                 //tldUrlMatch = match[ 8 ],  -- not needed at the moment
                 tldProtocolRelativeMatch = match[9], offset = match.index, protocolRelativeMatch = wwwProtocolRelativeMatch || tldProtocolRelativeMatch, prevChar = text.charAt(offset - 1);
                 if (!UrlMatchValidator.isValid(matchStr, schemeUrlMatch)) {
@@ -2657,8 +2657,8 @@
             while ((match = matcherRegex.exec(text)) !== null) {
                 // Remove non-numeric values from phone number string
                 var matchedText = match[0], cleanNumber = matchedText.replace(/[^0-9,;#]/g, ''), // strip out non-digit characters exclude comma semicolon and #
-                    plusSign = !!(match[1] || match[2]), // match[ 1 ] or match[ 2 ] is the prefixed plus sign, if there is one
-                    before = match.index == 0 ? '' : text.substr(match.index - 1, 1), after = text.substr(match.index + matchedText.length, 1), contextClear = !before.match(/\d/) && !after.match(/\d/);
+                plusSign = !!(match[1] || match[2]), // match[ 1 ] or match[ 2 ] is the prefixed plus sign, if there is one
+                before = match.index == 0 ? '' : text.substr(match.index - 1, 1), after = text.substr(match.index + matchedText.length, 1), contextClear = !before.match(/\d/) && !after.match(/\d/);
                 if (this.testMatch(match[3]) && this.testMatch(matchedText) && contextClear) {
                     matches.push(new PhoneMatch({
                         tagBuilder: tagBuilder,
@@ -2820,7 +2820,7 @@
      */
     function parseHtml(html, { onOpenTag, onCloseTag, onText, onComment, onDoctype, }) {
         const noCurrentTag = new CurrentTag();
-        let charIdx = 0, len = html.length, state = 0 /* Data */, currentDataIdx = 0, // where the current data start index is
+        let charIdx = 0, len = html.length, state = 0 /* State.Data */, currentDataIdx = 0, // where the current data start index is
         currentTag = noCurrentTag; // describes the current tag that is being read
         // For debugging: search for other "For debugging" lines
         // const table = new CliTable( {
@@ -2834,67 +2834,67 @@
             // 	[ charIdx, char, State[ state ], currentDataIdx, currentTag.idx, currentTag.idx === -1 ? '' : currentTag.type ]
             // );
             switch (state) {
-                case 0 /* Data */:
+                case 0 /* State.Data */:
                     stateData(char);
                     break;
-                case 1 /* TagOpen */:
+                case 1 /* State.TagOpen */:
                     stateTagOpen(char);
                     break;
-                case 2 /* EndTagOpen */:
+                case 2 /* State.EndTagOpen */:
                     stateEndTagOpen(char);
                     break;
-                case 3 /* TagName */:
+                case 3 /* State.TagName */:
                     stateTagName(char);
                     break;
-                case 4 /* BeforeAttributeName */:
+                case 4 /* State.BeforeAttributeName */:
                     stateBeforeAttributeName(char);
                     break;
-                case 5 /* AttributeName */:
+                case 5 /* State.AttributeName */:
                     stateAttributeName(char);
                     break;
-                case 6 /* AfterAttributeName */:
+                case 6 /* State.AfterAttributeName */:
                     stateAfterAttributeName(char);
                     break;
-                case 7 /* BeforeAttributeValue */:
+                case 7 /* State.BeforeAttributeValue */:
                     stateBeforeAttributeValue(char);
                     break;
-                case 8 /* AttributeValueDoubleQuoted */:
+                case 8 /* State.AttributeValueDoubleQuoted */:
                     stateAttributeValueDoubleQuoted(char);
                     break;
-                case 9 /* AttributeValueSingleQuoted */:
+                case 9 /* State.AttributeValueSingleQuoted */:
                     stateAttributeValueSingleQuoted(char);
                     break;
-                case 10 /* AttributeValueUnquoted */:
+                case 10 /* State.AttributeValueUnquoted */:
                     stateAttributeValueUnquoted(char);
                     break;
-                case 11 /* AfterAttributeValueQuoted */:
+                case 11 /* State.AfterAttributeValueQuoted */:
                     stateAfterAttributeValueQuoted(char);
                     break;
-                case 12 /* SelfClosingStartTag */:
+                case 12 /* State.SelfClosingStartTag */:
                     stateSelfClosingStartTag(char);
                     break;
-                case 13 /* MarkupDeclarationOpenState */:
+                case 13 /* State.MarkupDeclarationOpenState */:
                     stateMarkupDeclarationOpen();
                     break;
-                case 14 /* CommentStart */:
+                case 14 /* State.CommentStart */:
                     stateCommentStart(char);
                     break;
-                case 15 /* CommentStartDash */:
+                case 15 /* State.CommentStartDash */:
                     stateCommentStartDash(char);
                     break;
-                case 16 /* Comment */:
+                case 16 /* State.Comment */:
                     stateComment(char);
                     break;
-                case 17 /* CommentEndDash */:
+                case 17 /* State.CommentEndDash */:
                     stateCommentEndDash(char);
                     break;
-                case 18 /* CommentEnd */:
+                case 18 /* State.CommentEnd */:
                     stateCommentEnd(char);
                     break;
-                case 19 /* CommentEndBang */:
+                case 19 /* State.CommentEndBang */:
                     stateCommentEndBang(char);
                     break;
-                case 20 /* Doctype */:
+                case 20 /* State.Doctype */:
                     stateDoctype(char);
                     break;
                 default:
@@ -2923,10 +2923,10 @@
         // https://www.w3.org/TR/html51/syntax.html#tag-open-state
         function stateTagOpen(char) {
             if (char === '!') {
-                state = 13 /* MarkupDeclarationOpenState */;
+                state = 13 /* State.MarkupDeclarationOpenState */;
             }
             else if (char === '/') {
-                state = 2 /* EndTagOpen */;
+                state = 2 /* State.EndTagOpen */;
                 currentTag = new CurrentTag({ ...currentTag, isClosing: true });
             }
             else if (char === '<') {
@@ -2935,12 +2935,12 @@
             }
             else if (letterRe.test(char)) {
                 // tag name start (and no '/' read)
-                state = 3 /* TagName */;
+                state = 3 /* State.TagName */;
                 currentTag = new CurrentTag({ ...currentTag, isOpening: true });
             }
             else {
                 // Any other
-                state = 0 /* Data */;
+                state = 0 /* State.Data */;
                 currentTag = noCurrentTag;
             }
         }
@@ -2953,7 +2953,7 @@
                     ...currentTag,
                     name: captureTagName(),
                 });
-                state = 4 /* BeforeAttributeName */;
+                state = 4 /* State.BeforeAttributeName */;
             }
             else if (char === '<') {
                 // start of another tag (ignore the previous, incomplete one)
@@ -2964,7 +2964,7 @@
                     ...currentTag,
                     name: captureTagName(),
                 });
-                state = 12 /* SelfClosingStartTag */;
+                state = 12 /* State.SelfClosingStartTag */;
             }
             else if (char === '>') {
                 currentTag = new CurrentTag({
@@ -2988,7 +2988,7 @@
                 resetToDataState();
             }
             else if (letterRe.test(char)) {
-                state = 3 /* TagName */;
+                state = 3 /* State.TagName */;
             }
             else {
                 // some other non-tag-like character, don't treat this as a tag
@@ -2999,7 +2999,7 @@
         function stateBeforeAttributeName(char) {
             if (whitespaceRe.test(char)) ;
             else if (char === '/') {
-                state = 12 /* SelfClosingStartTag */;
+                state = 12 /* State.SelfClosingStartTag */;
             }
             else if (char === '>') {
                 emitTagAndPreviousTextNode(); // resets to Data state as well
@@ -3016,19 +3016,19 @@
             }
             else {
                 // Any other char, start of a new attribute name
-                state = 5 /* AttributeName */;
+                state = 5 /* State.AttributeName */;
             }
         }
         // https://www.w3.org/TR/html51/syntax.html#attribute-name-state
         function stateAttributeName(char) {
             if (whitespaceRe.test(char)) {
-                state = 6 /* AfterAttributeName */;
+                state = 6 /* State.AfterAttributeName */;
             }
             else if (char === '/') {
-                state = 12 /* SelfClosingStartTag */;
+                state = 12 /* State.SelfClosingStartTag */;
             }
             else if (char === '=') {
-                state = 7 /* BeforeAttributeValue */;
+                state = 7 /* State.BeforeAttributeValue */;
             }
             else if (char === '>') {
                 emitTagAndPreviousTextNode(); // resets to Data state as well
@@ -3049,10 +3049,10 @@
         function stateAfterAttributeName(char) {
             if (whitespaceRe.test(char)) ;
             else if (char === '/') {
-                state = 12 /* SelfClosingStartTag */;
+                state = 12 /* State.SelfClosingStartTag */;
             }
             else if (char === '=') {
-                state = 7 /* BeforeAttributeValue */;
+                state = 7 /* State.BeforeAttributeValue */;
             }
             else if (char === '>') {
                 emitTagAndPreviousTextNode();
@@ -3069,17 +3069,17 @@
             }
             else {
                 // Any other character, start a new attribute in the current tag
-                state = 5 /* AttributeName */;
+                state = 5 /* State.AttributeName */;
             }
         }
         // https://www.w3.org/TR/html51/syntax.html#before-attribute-value-state
         function stateBeforeAttributeValue(char) {
             if (whitespaceRe.test(char)) ;
             else if (char === `"`) {
-                state = 8 /* AttributeValueDoubleQuoted */;
+                state = 8 /* State.AttributeValueDoubleQuoted */;
             }
             else if (char === `'`) {
-                state = 9 /* AttributeValueSingleQuoted */;
+                state = 9 /* State.AttributeValueSingleQuoted */;
             }
             else if (/[>=`]/.test(char)) {
                 // Invalid chars after an '=' for an attribute value, don't count
@@ -3092,27 +3092,27 @@
             }
             else {
                 // Any other character, consider it an unquoted attribute value
-                state = 10 /* AttributeValueUnquoted */;
+                state = 10 /* State.AttributeValueUnquoted */;
             }
         }
         // https://www.w3.org/TR/html51/syntax.html#attribute-value-double-quoted-state
         function stateAttributeValueDoubleQuoted(char) {
             if (char === `"`) {
                 // end the current double-quoted attribute
-                state = 11 /* AfterAttributeValueQuoted */;
+                state = 11 /* State.AfterAttributeValueQuoted */;
             }
         }
         // https://www.w3.org/TR/html51/syntax.html#attribute-value-single-quoted-state
         function stateAttributeValueSingleQuoted(char) {
             if (char === `'`) {
                 // end the current single-quoted attribute
-                state = 11 /* AfterAttributeValueQuoted */;
+                state = 11 /* State.AfterAttributeValueQuoted */;
             }
         }
         // https://www.w3.org/TR/html51/syntax.html#attribute-value-unquoted-state
         function stateAttributeValueUnquoted(char) {
             if (whitespaceRe.test(char)) {
-                state = 4 /* BeforeAttributeName */;
+                state = 4 /* State.BeforeAttributeName */;
             }
             else if (char === '>') {
                 emitTagAndPreviousTextNode();
@@ -3126,10 +3126,10 @@
         // https://www.w3.org/TR/html51/syntax.html#after-attribute-value-quoted-state
         function stateAfterAttributeValueQuoted(char) {
             if (whitespaceRe.test(char)) {
-                state = 4 /* BeforeAttributeName */;
+                state = 4 /* State.BeforeAttributeName */;
             }
             else if (char === '/') {
-                state = 12 /* SelfClosingStartTag */;
+                state = 12 /* State.SelfClosingStartTag */;
             }
             else if (char === '>') {
                 emitTagAndPreviousTextNode();
@@ -3142,7 +3142,7 @@
                 // Any other character, "parse error". Spec says to switch to the
                 // BeforeAttributeState and re-consume the character, as it may be
                 // the start of a new attribute name
-                state = 4 /* BeforeAttributeName */;
+                state = 4 /* State.BeforeAttributeName */;
                 reconsumeCurrentCharacter();
             }
         }
@@ -3155,7 +3155,7 @@
                 emitTagAndPreviousTextNode(); // resets to Data state as well
             }
             else {
-                state = 4 /* BeforeAttributeName */;
+                state = 4 /* State.BeforeAttributeName */;
             }
         }
         // https://www.w3.org/TR/html51/syntax.html#markup-declaration-open-state
@@ -3165,12 +3165,12 @@
                 // html comment
                 charIdx += 2; // "consume" characters
                 currentTag = new CurrentTag({ ...currentTag, type: 'comment' });
-                state = 14 /* CommentStart */;
+                state = 14 /* State.CommentStart */;
             }
             else if (html.substr(charIdx, 7).toUpperCase() === 'DOCTYPE') {
                 charIdx += 7; // "consume" characters
                 currentTag = new CurrentTag({ ...currentTag, type: 'doctype' });
-                state = 20 /* Doctype */;
+                state = 20 /* State.Doctype */;
             }
             else {
                 // At this point, the spec specifies that the state machine should
@@ -3186,7 +3186,7 @@
         function stateCommentStart(char) {
             if (char === '-') {
                 // We've read the sequence '<!---' at this point (3 dashes)
-                state = 15 /* CommentStartDash */;
+                state = 15 /* State.CommentStartDash */;
             }
             else if (char === '>') {
                 // At this point, we'll assume the comment wasn't a real comment
@@ -3196,7 +3196,7 @@
             }
             else {
                 // Any other char, take it as part of the comment
-                state = 16 /* Comment */;
+                state = 16 /* State.Comment */;
             }
         }
         // We've read the sequence '<!---' at this point (3 dashes)
@@ -3204,7 +3204,7 @@
         function stateCommentStartDash(char) {
             if (char === '-') {
                 // We've read '<!----' (4 dashes) at this point
-                state = 18 /* CommentEnd */;
+                state = 18 /* State.CommentEnd */;
             }
             else if (char === '>') {
                 // At this point, we'll assume the comment wasn't a real comment
@@ -3214,14 +3214,14 @@
             }
             else {
                 // Anything else, take it as a valid comment
-                state = 16 /* Comment */;
+                state = 16 /* State.Comment */;
             }
         }
         // Currently reading the comment's text (data)
         // https://www.w3.org/TR/html51/syntax.html#comment-state
         function stateComment(char) {
             if (char === '-') {
-                state = 17 /* CommentEndDash */;
+                state = 17 /* State.CommentEndDash */;
             }
         }
         // When we we've read the first dash inside a comment, it may signal the
@@ -3229,11 +3229,11 @@
         // https://www.w3.org/TR/html51/syntax.html#comment-end-dash-state
         function stateCommentEndDash(char) {
             if (char === '-') {
-                state = 18 /* CommentEnd */;
+                state = 18 /* State.CommentEnd */;
             }
             else {
                 // Wasn't a dash, must still be part of the comment
-                state = 16 /* Comment */;
+                state = 16 /* State.Comment */;
             }
         }
         // After we've read two dashes inside a comment, it may signal the end of
@@ -3244,13 +3244,13 @@
                 emitTagAndPreviousTextNode();
             }
             else if (char === '!') {
-                state = 19 /* CommentEndBang */;
+                state = 19 /* State.CommentEndBang */;
             }
             else if (char === '-') ;
             else {
                 // Anything else, switch back to the comment state since we didn't
                 // read the full "end comment" sequence (i.e. '-->')
-                state = 16 /* Comment */;
+                state = 16 /* State.Comment */;
             }
         }
         // We've read the sequence '--!' inside of a comment
@@ -3259,7 +3259,7 @@
             if (char === '-') {
                 // We read the sequence '--!-' inside of a comment. The last dash
                 // could signify that the comment is going to close
-                state = 17 /* CommentEndDash */;
+                state = 17 /* State.CommentEndDash */;
             }
             else if (char === '>') {
                 // End of comment with the sequence '--!>'
@@ -3268,7 +3268,7 @@
             else {
                 // The '--!' was not followed by a '>', continue reading the
                 // comment's text
-                state = 16 /* Comment */;
+                state = 16 /* State.Comment */;
             }
         }
         /**
@@ -3298,7 +3298,7 @@
          * like a real HTML tag.
          */
         function resetToDataState() {
-            state = 0 /* Data */;
+            state = 0 /* State.Data */;
             currentTag = noCurrentTag;
         }
         /**
@@ -3310,7 +3310,7 @@
          * previously reading.
          */
         function startNewTag() {
-            state = 1 /* TagOpen */;
+            state = 1 /* State.TagOpen */;
             currentTag = new CurrentTag({ idx: charIdx });
         }
         /**
@@ -3631,7 +3631,7 @@
              *  the percent-encoded characters.
              *
              *  Example when `true`: `https://en.wikipedia.org/wiki/San_Jos%C3%A9` will
-             *  be displayed as `https://en.wikipedia.org/wiki/San_Jose`.
+             *  be displayed as `https://en.wikipedia.org/wiki/San_José`.
              */
             this.decodePercentEncoding = true; // default value just to get the above doc comment in the ES5 output and documentation generator
             /**

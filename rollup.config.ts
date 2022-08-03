@@ -7,7 +7,7 @@ const pkg = require('./package.json');
 export default {
     input: './dist/es2015/autolinker.js',
     output: {
-        file: './dist/autolinker.js',
+        file: './dist/Autolinker.js',
         format: 'umd',
         name: 'Autolinker',
         sourcemap: false,

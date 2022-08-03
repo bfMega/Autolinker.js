@@ -1,6 +1,6 @@
 /**
  * Date: 2015-10-05
- * Author: Kasper Søfren <soefritz@gmail.com> (https://github.com/kafoso)
+ * Author: Kasper Sofren <soefritz@gmail.com> (https://github.com/kafoso)
  *
  * A truncation feature, where the ellipsis will be placed in the dead-center of the URL.
  *

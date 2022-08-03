@@ -16,7 +16,15 @@ export async function updateTldRegex() {
         responseType: 'text',
     });
 
-    const tldRegex = domainsToRegex(tldsFile.data);
+    let tldRegex = domainsToRegex(tldsFile.data);
+    const matches = tldRegex.match(/[\u0100-\uFFFF]/g) || [];
+    matches.forEach(match => {
+        let codePoint = (match.codePointAt(0) || 0).toString(16);
+        if (codePoint.length < 4) {
+            codePoint = `0${codePoint}`;
+        }
+        tldRegex = tldRegex.replace(new RegExp(match, 'g'), `\\u${codePoint}`);
+    });
     let outputFile = dedent`
         // NOTE: THIS IS A GENERATED FILE\n// To update with the latest TLD list, run \`npm run update-tld-regex\`\n\n
         ${tldRegex}

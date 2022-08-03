@@ -179,7 +179,7 @@ export function parseHtml(
     // For debugging: search for other "For debugging" lines
     // console.log( '\n' + table.toString() );
 
-    // Called when non-tags are being read (i.e. the text around HTML †ags)
+    // Called when non-tags are being read (i.e. the text around HTML tags)
     // https://www.w3.org/TR/html51/syntax.html#data-state
     function stateData(char: string) {
         if (char === '<') {
