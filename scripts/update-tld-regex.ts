@@ -19,10 +19,7 @@ export async function updateTldRegex() {
     let tldRegex = domainsToRegex(tldsFile.data);
     const matches = tldRegex.match(/[\u007F-\uFFFF]/g) || [];
     matches.forEach(match => {
-        let codePoint = (match.codePointAt(0) || 0).toString(16);
-        if (codePoint.length < 4) {
-            codePoint = `0${codePoint}`;
-        }
+        const codePoint = (match.codePointAt(0) | 0).toString(16).padStart(4, '0');
         tldRegex = tldRegex.replace(new RegExp(match, 'g'), `\\u${codePoint}`);
     });
     let outputFile = dedent`
